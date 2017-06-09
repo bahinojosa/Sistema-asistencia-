@@ -1,0 +1,32 @@
+CREATE TABLE asegurado (
+    id                 INTEGER NOT NULL,
+    rut                unknown 
+--  ERROR: Datatype UNKNOWN is not allowed 
+     NOT NULL,
+    nombre             VARCHAR2(25) NOT NULL,
+    apellido_paterno   VARCHAR2(25) NOT NULL,
+    apellido_materno   VARCHAR2(26) NOT NULL,
+    direccion          VARCHAR2(25) NOT NULL,
+    sexo               VARCHAR2(15) NOT NULL,
+    email              VARCHAR2(50) NOT NULL,
+    telefono           INTEGER NOT NULL
+);
+
+ALTER TABLE asegurado ADD CONSTRAINT asegurado_pk PRIMARY KEY ( id );
+
+CREATE TABLE poliza (
+    id            INTEGER NOT NULL,
+    descripcion   VARCHAR2(100) NOT NULL,
+    monto         INTEGER NOT NULL
+);
+
+ALTER TABLE poliza ADD CONSTRAINT poliza_pk PRIMARY KEY ( id );
+
+CREATE TABLE siniestro (
+    id                       INTEGER NOT NULL,
+    nombre_siniestro         VARCHAR2(50) NOT NULL,
+    direccion                VARCHAR2(50),
+    vehiculos_involucrados   INTEGER NOT NULL
+);
+
+ALTER TABLE siniestro ADD CONSTRAINT siniestro_pk PRIMARY KEY ( id );
